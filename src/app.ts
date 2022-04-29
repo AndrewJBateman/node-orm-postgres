@@ -9,6 +9,6 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json())
 
-app.use(dataRoutes)
+app.use("/data", dataRoutes)
 
 export default app;
