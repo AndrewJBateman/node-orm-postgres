@@ -1,6 +1,6 @@
 # :zap: Node ORM Postgres
 
-* Node.js used with TypeORM (Object Relational Mapping) and Typescript to connect to a PostgreSQL database
+* Node.js used with TypeORM (an ORM - Object Relational Mapping) and Typescript to create a data Entity model and perform CRUD operations on the data in a PostgreSQL database
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/node-orm-postgres?style=plastic)
@@ -19,7 +19,7 @@
   * [:wrench: Testing](#wrench-testing)
   * [:computer: Code Examples](#computer-code-examples)
   * [:cool: Features](#cool-features)
-  * [:clipboard: Status, Testing & To-Do List](#clipboard-status-testing--to-do-list)
+  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration/General Tools](#clap-inspirationgeneral-tools)
   * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
@@ -27,8 +27,31 @@
 ## :books: General info
 
 * TypeORM makes creating and accessing a database easier and can be used with any relational database
+* A typeORM entity is a class with attributes that maps to a database table with columns - like a model
 * Data created is based on my site experience at the LNG extraction facility on Melkoya island in Hammerfest, Norway where everything is divided up into areas and zones.
 * Code includes routes & controllers to perform Create, Read, Update and Delete (CRUD) operations.
+* Code created in Typescript that is transpiled into javascript using [Node package ts-node](https://www.npmjs.com/package/ts-node)
+
+* Project Structure:
+
+```bash
+├── package.json
+├── src
+│  ├── app.ts
+│  ├── controllers
+│  │  └── data.controller.ts
+│  ├── db.ts
+│  ├── entity
+│  │  └── Data.ts
+│  ├── index.ts
+│  └── routes
+│    └── data.routes.ts
+└── tsconfig.json
+```
+
+* Database Overview:
+
+![Overview](./imgs/data_class.png)
 
 ## :camera: Screenshots
 
@@ -36,8 +59,10 @@
 
 ## :signal_strength: Technologies
 
-* [Node.js v16](https://nodejs.org/) Javascript runtime using the [Chrome V8 engine](https://v8.dev/)
-* [TypeORM v0.3.5](https://typeorm.io/) ORM used with PostgreSQL database
+* [Node.js v16](https://nodejs.org/) Javascript (JS) runtime using the [Chrome V8 engine](https://v8.dev/)
+* [ts-node v10](https://www.npmjs.com/package/ts-node) Typescript (TS) execution engine and JIT transformation from TS to JS
+* [TypeORM v0.3.6](https://typeorm.io/) ORM used with PostgreSQL database. [Github repo here](https://github.com/typeorm/typeorm)
+* [PostgreSQL v14](https://www.postgresql.org/) object-relational database
 * [DBeaver v22](https://dbeaver.io/) database management tool
 * [VS Extension Thunder client](https://www.thunderclient.com/) REST Client for Testing APIs
 
@@ -45,6 +70,7 @@
 
 * Assuming you have PostgreSQL database installed, install DBeaver and connect to your PostgreSQL database using DBeaver
 * Install dependencies using `npm i`
+* Create `.env` and add database credentials - see `.example.env`
 * `npm run dev` to start database
 * Use Thunder client to make CRUD operations using port 3000
 
@@ -78,7 +104,7 @@
 * Thunder Client does make testing the database functions much easier using JSON-based CRUD operations.
 * TypeORM is easy to use once the data Entity has been set up correctly.
 
-## :clipboard: Status, Testing & To-Do List
+## :clipboard: Status & To-Do List
 
 * Status: Working
 * To-Do: Add to database and add frontend to view data on pretty cards or in a table
