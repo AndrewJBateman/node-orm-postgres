@@ -12,6 +12,9 @@ import { ProjectDataComponent } from './project-data.component';
   imports: [
     CommonModule,
     ProjectDataRoutingModule
+  ],
+  exports: [
+    ProjectDataComponent
   ]
 })
 export class ProjectDataModule { }

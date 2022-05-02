@@ -2,7 +2,7 @@ import "reflect-metadata";
 import app from "./app";
 import { AppDataSource } from "./db";
 
-// Immediately-Invoked Function Expression (IIFI) 
+// Immediately-Invoked Function Expression (IIFI)
 (async function main() {
   try {
     await AppDataSource.initialize();
