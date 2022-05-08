@@ -3,6 +3,7 @@ dotenv.config();
 
 import { DataSource } from "typeorm";
 import { Data } from "./entity/Data";
+import { NorskPetroleum } from "./entity/NorskPetroleum"
 
 const envData = process.env;
 const HOST = envData.DB_HOST;
@@ -18,6 +19,7 @@ export const AppDataSource = new DataSource({
   password: PASS,
   database: "typeormdb",
   synchronize: true,
-  entities: [Data],
+  // entities: [Data],
+  entities: [NorskPetroleum],
   logging: true,
 });
