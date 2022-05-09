@@ -1,13 +1,14 @@
 import "reflect-metadata";
 import app from "./app";
-import { AppDataSource } from "./db";
+import { dataConnection } from "./db";
 
 // Immediately-Invoked Function Expression (IIFI)
 (async function main() {
+  const port = 3000;
   try {
-    await AppDataSource.initialize();
+    await dataConnection.initialize();
     console.log("database connected");
-    app.listen(3000, () => console.log("listening on port 3000"));
+    app.listen(port, () => console.log(`listening on port ${port}`));
   } catch (error) {
     console.error(error);
   }
