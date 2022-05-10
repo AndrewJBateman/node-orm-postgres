@@ -17,6 +17,6 @@ export class AppComponent {
     //   this.data$ = data;
     //   console.log('data: ', data);
     // });
-    this.data$ = this.dataService.getData();
+    this.data$ = this.dataService.getProjectData();
   }
 }

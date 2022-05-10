@@ -1,0 +1,32 @@
+<div class="mt-6 overflow-x-auto shadow">
+  <table class="w-full border-collapse rounded-lg table-auto">
+    <thead>
+      <tr class="font-bold text-left text-white rounded-lg">
+        <th class="column-header">Name</th>
+        <th class="column-header">Area</th>
+        <th class="column-header">Status</th>
+        <th class="column-header">Rem Res</th>
+      </tr>
+    </thead>
+    <tbody class="text-sm font-normal text-gray-700 bg-white">
+      <tr
+        *ngFor="let data of norskData$ | async; trackBy: trackByFn"
+        class="py-10 border-b border-gray-200"
+      >
+        <td class="table-cell">{{ data.field_name }}</td>
+        <td class="table-cell">
+          test {{ data.area }}
+        </td>
+        <td class="table-cell">
+          {{ data.status }}
+        </td>
+        <td class="table-cell">
+          {{ data.rem_res }}
+        </td>
+        <!-- <ng-template #noData>
+          <td class="table-cell">Pas de Données</td>
+        </ng-template> -->
+      </tr>
+    </tbody>
+  </table>
+</div>

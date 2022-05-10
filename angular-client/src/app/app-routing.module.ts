@@ -6,10 +6,17 @@ import { NotFoundComponent } from './modules/common/not-found/not-found.componen
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'data',
+    path: 'project-data',
     loadChildren: () =>
       import('./modules/application/project-data/project-data.module').then(
         (mod) => mod.ProjectDataModule
+      ),
+  },
+  {
+    path: 'norsk-data',
+    loadChildren: () =>
+      import('./modules/application/norsk-data/norsk-data.module').then(
+        (mod) => mod.NorskDataModule
       ),
   },
   {

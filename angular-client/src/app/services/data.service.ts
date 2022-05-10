@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { ProjectData } from '../models/project.data';
+import { NorskData } from '../models/norsk.data';
 
 const baseUrl = 'http://localhost:3000';
 
@@ -10,10 +11,13 @@ const baseUrl = 'http://localhost:3000';
   providedIn: 'root',
 })
 export class DataService {
-
   constructor(private http: HttpClient) {}
 
-  getData(): Observable<ProjectData[]> {
+  getProjectData(): Observable<ProjectData[]> {
     return this.http.get<ProjectData[]>(`${baseUrl}/data`);
+  }
+
+  getNorskData(): Observable<NorskData[]> {
+    return this.http.get<NorskData[]>(`${baseUrl}/norsk`);
   }
 }
