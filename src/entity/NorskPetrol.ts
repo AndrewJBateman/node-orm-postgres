@@ -8,7 +8,7 @@ import {
 } from "typeorm";
 
 @Entity()
-export class NorskPetroleum extends BaseEntity {
+export class NorskPetrol extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -21,7 +21,7 @@ export class NorskPetroleum extends BaseEntity {
   @Column()
   status: string;
 
-  @Column()
+  @Column("int")
   disc_year: number
 
   @Column()

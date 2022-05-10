@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { NorskPetroleum } from "../entity/NorskPetroleum";
+import { NorskPetrol } from "../entity/NorskPetrol";
 
 // CREATE
 export const createNorskData = async (req: Request, res: Response) => {
@@ -14,7 +14,7 @@ export const createNorskData = async (req: Request, res: Response) => {
       prod_start,
       operator,
     } = req.body;
-    const data = new NorskPetroleum();
+    const data = new NorskPetrol();
     data.field_name = field_name;
     data.area = area;
     data.status = status;
@@ -35,7 +35,7 @@ export const createNorskData = async (req: Request, res: Response) => {
 // READ ALL
 export const getNorskData = async (req: Request, res: Response) => {
   try {
-    return res.json(await NorskPetroleum.find());
+    return res.json(await NorskPetrol.find());
   } catch (error) {
     if (error instanceof Error) {
       return res.json(500).json({ message: error.message });
@@ -47,12 +47,12 @@ export const getNorskData = async (req: Request, res: Response) => {
 export const updateNorskData = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    const data = await NorskPetroleum.findOneBy({ id: +req.params.id });
+    const data = await NorskPetrol.findOneBy({ id: +req.params.id });
 
     if (!data)
       return res.status(404).json({ message: "There is no data with that id" });
 
-    await NorskPetroleum.update({ id: +id }, req.body);
+    await NorskPetrol.update({ id: +id }, req.body);
     return res.sendStatus(204);
   } catch (error) {
     if (error instanceof Error) {
@@ -65,7 +65,7 @@ export const updateNorskData = async (req: Request, res: Response) => {
 export const deleteNorskData = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    return (await NorskPetroleum.delete({ id: +id })).affected === 0
+    return (await NorskPetrol.delete({ id: +id })).affected === 0
       ? res
           .status(404)
           .json({ message: "Matching data not found or not deleted" })
@@ -81,7 +81,7 @@ export const deleteNorskData = async (req: Request, res: Response) => {
 export const getNorskDataDetail = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    return res.json(await NorskPetroleum.findOneBy({ id: +id }));
+    return res.json(await NorskPetrol.findOneBy({ id: +id }));
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message });

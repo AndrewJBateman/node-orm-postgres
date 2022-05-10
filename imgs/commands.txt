@@ -1,0 +1,22 @@
+SQL to list all databases:
+\l
+
+to list database in detail:
+\d+ typeormdb
+
+to list all tables in schema 'public':
+\dt public.*
+
+to connect to my database:
+\c typeormdb;
+
+to clear buffer:
+\r
+
+to delete a specific record:
+DELETE FROM public.norsk_petrol
+	WHERE id=253;
+
+to display all lines in schema 'public' table 'norskpetroleum':
+SELECT * FROM public.norsk_petroleum
+ORDER BY field_name ASC;
