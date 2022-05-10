@@ -1,6 +1,7 @@
 # :zap: Node ORM Postgres
 
-* Node.js used with TypeORM (an ORM - Object Relational Mapping) and Typescript to create a data Entity model and perform CRUD operations on the data in a PostgreSQL database
+* Node.js backend using TypeORM (an ORM - Object Relational Mapping) and Typescript to create a data Entity model and perform CRUD operations on the data in a PostgreSQL database
+* Angular frontend with Tailwind styling to display Field and Project data from backend
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/node-orm-postgres?style=plastic)
@@ -26,26 +27,29 @@
 
 ## :books: General info
 
-* TypeORM makes creating and accessing a database easier and can be used with any relational database
-* A typeORM entity is a class with attributes that maps to a database table with columns - like a model
-* Data created is based on my site experience at the LNG extraction facility on Melkoya island in Hammerfest, Norway where everything is divided up into areas and zones.
+* TypeORM makes creating and accessing a database easier and can be used with any relational database. A typeORM entity is a class with attributes that maps to a database table with columns - like a model
+* Data created is based on my site experience at the LNG extraction facility on Melkoya island in Hammerfest, Norway where everything is divided up into areas and zones. The Norsk data is based on all the Norwegian oil rigs in the North Sea
+* An interesting problem occured during import of Norwegian CSV data - Norwegian characters were not recognised. Postgres needs to use the LATIN4 character set (Northern European). Default is UTF8 (viewable from pgAdmin `Catalogs/Catalog Objects/character_sets/Columns`).
 * Code includes routes & controllers to perform Create, Read, Update and Delete (CRUD) operations.
 * Code created in Typescript that is transpiled into javascript using [Node package ts-node](https://www.npmjs.com/package/ts-node)
 
-* Project Structure:
+* Backend Project Structure:
 
 ```bash
-├── package.json
 ├── src
 │  ├── app.ts
 │  ├── controllers
-│  │  └── data.controller.ts
+│  │  ├── data.controller.ts
+│  │  └── norsk.controller.ts
 │  ├── db.ts
 │  ├── entity
-│  │  └── Data.ts
+│  │  ├── Data.ts
+│  │  ├── NorskPetroleum.ts
+│  │  └── PlantData.ts
 │  ├── index.ts
 │  └── routes
-│    └── data.routes.ts
+│    ├── data.routes.ts
+│    └── norsk.routes.ts
 └── tsconfig.json
 ```
 
@@ -66,12 +70,16 @@
 * [DBeaver v22](https://dbeaver.io/) database management tool
 * [VS Extension Thunder client](https://www.thunderclient.com/) REST Client for Testing APIs
 
+* [Angular v13](https://angular.io/) framework
+* [Tailwindcss v2](https://tailwindcss.com/) CSS framework
+* [Reactive Extensions Library for Javascript rxjs v7](https://rxjs.dev/)
+
 ## :floppy_disk: Setup
 
 * Assuming you have PostgreSQL database installed, install DBeaver and connect to your PostgreSQL database using DBeaver
 * Install dependencies using `npm i`
 * Create `.env` and add database credentials - see `.example.env`
-* `npm run dev` to start database
+* `npm run dev` to start database and create table. I used SQL queries to add data - see `NorskPetroleum.sql`
 * Use Thunder client to make CRUD operations using port 3000
 
 ## :wrench: Testing
@@ -86,7 +94,7 @@
  export const deleteData = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    return (await Data.delete({ id: +id })).affected === 0
+    return (await NorskPetrol.delete({ id: +id })).affected === 0
       ? res
           .status(404)
           .json({ message: "Matching data not found or not deleted" })
@@ -107,11 +115,15 @@
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: Add to database and add frontend to view data on pretty cards or in a table
+* To-Do: backend: update project data. frontend: add home page, nav bar icons
 
 ## :clap: Inspiration/General Tools
 
 * [TypeORM documentation](https://typeorm.io/example-with-express)
+* [Norwegian & Petroleum Oil Field Data](https://www.norskpetroleum.no/en/facts/field/)
+* [Convert CSV to SQL online](https://www.convertcsv.com/csv-to-sql.htm) to generate SQL CREATE & INSERT commands - very useful
+* [PostgreSQL - How to list all available tables?](https://tableplus.com/blog/2018/04/postgresql-how-to-list-all-tables.html)
+* [PostgreSQL docs 24.3. Character Set Support](https://www.postgresql.org/docs/current/multibyte.html#MULTIBYTE-CHARSET-SUPPORTED)
 
 ## :file_folder: License
 

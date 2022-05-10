@@ -1,0 +1,35 @@
+area: Seabed Snohvit
+zone: Well1, Well2, Well3, Well4, Well5, Well6, Well7, Well8, PCO2 Injector, Plem, CDU, Reservoir
+
+area: Seabed Albatross
+zones: Well1, Well2, Well3
+
+area: Seabed Askeladd
+zones: Well1, Well2, Well3, Well4, Well5, Well6, Well7, Well8
+
+area: Slug-catcher
+
+area: Carbon Dioxide
+
+area: Inlet-facilities
+
+area: MEG Recovery
+zones: Offshore Utility Substation, MEG Process Area, MEG Substation, MEG Storage Tank, Hot Oil and Chemical Storage Tanks, Pig Receiver
+
+area: Condensate Production
+
+area: Pretreatment
+
+area: Fractionation
+zones: Refrigerant
+
+area: LPG Production
+
+area: LNG-production
+zones: Precooling-cycle, Liquefication-cycle, Subcooling-cycle
+
+area: Storage and Loading
+zones: LNG1 Storage, LNG2 Storage, LPG Storage, Condensate Storage
+
+area: Plant
+zones: Utility Systems, Flare Facilities, Control Room
