@@ -70,9 +70,9 @@
 * [DBeaver v22](https://dbeaver.io/) database management tool
 * [VS Extension Thunder client](https://www.thunderclient.com/) REST Client for Testing APIs
 
-* [Angular v13](https://angular.io/) framework
-* [Tailwindcss v2](https://tailwindcss.com/) CSS framework
-* [Reactive Extensions Library for Javascript rxjs v7](https://rxjs.dev/)
+* [Angular v14](https://angular.io/) framework
+* [Tailwindcss v3](https://tailwindcss.com/) CSS framework
+* [Reactive Extensions Library for Javascript RxJS v7](https://rxjs.dev/)
 
 ## :floppy_disk: Setup
 
@@ -81,6 +81,7 @@
 * Create `.env` and add database credentials - see `.example.env`
 * `npm run dev` to start database and create table. I used SQL queries to add data - see `NorskPetroleum.sql`
 * Use Thunder client to make CRUD operations using port 3000
+* `cd angular-client && ng serve` to run front end
 
 ## :wrench: Testing
 
@@ -115,7 +116,7 @@
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: backend: update project data. frontend: add home page, nav bar icons
+* To-Do: backend: update project data. frontend: model enums, add home page, nav bar icons, field search & filter
 
 ## :clap: Inspiration/General Tools
 
