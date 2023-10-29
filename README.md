@@ -12,22 +12,22 @@
 ## :page_facing_up: Table of contents
 
 * [:zap: Node ORM Postgres](#zap-node-orm-postgres)
-  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+  * [:page\_facing\_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
-  * [:signal_strength: Technologies](#signal_strength-technologies)
-  * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:signal\_strength: Technologies](#signal_strength-technologies)
+  * [:floppy\_disk: Setup](#floppy_disk-setup)
   * [:wrench: Testing](#wrench-testing)
   * [:computer: Code Examples](#computer-code-examples)
   * [:cool: Features](#cool-features)
-  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+  * [:clipboard: Status \& To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration/General Tools](#clap-inspirationgeneral-tools)
-  * [:file_folder: License](#file_folder-license)
+  * [:file\_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
 
-* TypeORM makes creating and accessing a database easier and can be used with any relational database. A typeORM entity is a class with attributes that maps to a database table with columns - like a model
+* TypeORM makes creating and accessing a database easier and can be used with any relational database. A typeORM entity is a class with attributes that map to a database table with columns - like a model
 * Data created is based on my site experience at the LNG extraction facility on Melkoya island in Hammerfest, Norway where everything is divided up into areas and zones. The Norsk data is based on all the Norwegian oil rigs in the North Sea
 * An interesting problem occured during import of Norwegian CSV data - Norwegian characters were not recognised. Postgres needs to use the LATIN4 character set (Northern European). Default is UTF8 (viewable from pgAdmin `Catalogs/Catalog Objects/character_sets/Columns`).
 * Code includes routes & controllers to perform Create, Read, Update and Delete (CRUD) operations.
@@ -63,14 +63,14 @@
 
 ## :signal_strength: Technologies
 
-* [Node.js v16](https://nodejs.org/) Javascript (JS) runtime using the [Chrome V8 engine](https://v8.dev/)
+* [Node.js v18](https://nodejs.org/) Javascript (JS) runtime using the [Chrome V8 engine](https://v8.dev/)
 * [ts-node v10](https://www.npmjs.com/package/ts-node) Typescript (TS) execution engine and JIT transformation from TS to JS
 * [TypeORM v0.3.6](https://typeorm.io/) ORM used with PostgreSQL database. [Github repo here](https://github.com/typeorm/typeorm)
 * [PostgreSQL v14](https://www.postgresql.org/) object-relational database
 * [DBeaver v22](https://dbeaver.io/) database management tool
 * [VS Extension Thunder client](https://www.thunderclient.com/) REST Client for Testing APIs
 
-* [Angular v14](https://angular.io/) framework
+* [Angular v15](https://angular.io/) framework
 * [Tailwindcss v3](https://tailwindcss.com/) CSS framework
 * [Reactive Extensions Library for Javascript RxJS v7](https://rxjs.dev/)
 
@@ -132,4 +132,4 @@
 
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: `gomezbateman@yahoo.com`
